@@ -1,0 +1,2 @@
+CREATE TABLE account (id INT PRIMARY KEY AUTO_INCREMENT, accountnumber int AUTO_INCREMENT, balance decimal(10,2) , creationdate date);
+CREATE TABLE moviment (id INT PRIMARY KEY AUTO_INCREMENT, movimenttype  char(1) Constraint movimenttypeConstraint Check(movimenttype In ('D','C')), value decimal(10,2) , movimentdate date, details varchar(255), accountid int, FOREIGN KEY (accountid) REFERENCES account(id));
